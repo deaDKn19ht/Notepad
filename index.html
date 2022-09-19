@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Блокнот</title>
+    <title>Notepad</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/vue@next"></script>
 </head>
@@ -14,7 +14,7 @@
         :class="['tab-button', {active: currentTab === tab}]"
         @click="currentTab = tab">{{tab}}</button>
 
-        <component :is="currentTabComponent" class="tab"></component>
+        <component :is="currentTabComponent" class="tab" :post="post" :posts="posts"></component>
     </div>
 
     <script src="code.js"></script>
