@@ -3,3 +3,43 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: slategray;
+}
+
+.card {
+    width: 360px;
+    height: 720px;
+    margin-top: 1em;
+    margin-bottom: 40px;
+    padding: 20px 30px;
+
+    .tab-button {
+        padding: 6px 10px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 20px;
+        background-color: rgb(231, 218, 196);
+        margin-top: -1px;
+        margin-right: -1px;
+        border: 1px solid rgb(183, 172, 152);
+        width: 80px;
+
+    &:hover {
+        background-color: oldlace;        
+    }
+    &:active {
+        background-color: oldlace;
+    }
+    }
+    .card__tab {
+        background-color: oldlace;
+        height: 90%;
+        border-radius: 3px;
+        padding: 10px;
+    }
+}
