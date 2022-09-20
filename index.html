@@ -14,7 +14,7 @@
         :class="['tab-button', {active: currentTab === tab}]"
         @click="currentTab = tab">{{tab}}</button>
 
-        <component :is="currentTabComponent" class="tab" :post="post" :posts="posts"></component>
+        <component :is="currentTabComponent" class="tab"  :posts="posts"></component>
     </div>
 
     <script src="code.js"></script>

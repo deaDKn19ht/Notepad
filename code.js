@@ -1,7 +1,7 @@
 const app = Vue.createApp({
     data() {
         return {
-            currentTab: 'AddList',
+            currentTab: 'AddNote',
             tabs: ['AddNote', 'NoteList'],  
             posts: []          
         }
@@ -34,11 +34,14 @@ app.component('tab-addnote', {
     },
     template: `<div class="card-tab"><input type="text" v-model="post.header">
     <textarea v-model="post.note"></textarea>
-    <button @click="saveNote">Сохранить</button></div>`
+    <button @click="saveNote">&#10004;</button></div>`
 })
 
 app.component('tab-notelist', {
-    template: `<div class="card-tab"></div>`
+    props: ['posts'],
+    template: `<div class="card-tab" v-for="(post, it) in posts"><h3>{{post.header}}</h3><p>{{post.date}}</p>
+    <button @click="post.active = !post.active">&#9660;</button><button @click="posts.splice(id,1)">&#10006;</button>
+    <p v-show="post.active">{{post.note}}</p></div>`
 })
 
 app.mount('#app')
