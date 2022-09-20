@@ -10,6 +10,18 @@ const app = Vue.createApp({
         currentTabComponent() {
             return 'tab-' + this.currentTab.toLowerCase()
         }
+    },
+    watch: {
+        posts: {
+            handler() {
+                localStorage.setItem('posts', JSON.stringify(this.posts))
+            },
+            deep: true,
+        }
+    },
+    mounted() {
+        if(localStorage.getItem('posts'))
+        this.posts = JSON.parse(localStorage.getItem('posts'))
     }
 })
 
