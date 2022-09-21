@@ -44,9 +44,9 @@ app.component('tab-addnote', {
             return new Date(Date.now()).toLocaleString()
         }
     },
-    template: `<div class="card__tab"><input type="text" v-model="post.header">
-    <textarea v-model="post.note"></textarea>
-    <button @click="saveNote">&#10004;</button></div>`
+    template: `<div class="card__tab"><input type="text" class="addnote__input" v-model="post.header">
+    <textarea class="addnote__textarea" v-model="post.note"></textarea>
+    <button class="addnote__btn" @click="saveNote">Сохранить</button></div>`
 })
 
 app.component('tab-notelist', {
