@@ -45,6 +45,9 @@ body {
   height: 90%;
   border-radius: 3px;
   padding: 10px;
+  overflow: hidden;
+  overflow: auto;
+  scrollbar-width: none;
 }
 
 .card .card__tab .addnote__input {
@@ -65,8 +68,8 @@ body {
   padding: 5px;
   font-style: italic;
   font-family: 'Times New Roman', Times, serif;
-  font-size: 16px;
   text-decoration: underline lightgray 1px;
+  font-size: 16px;
 }
 
 .card .card__tab .addnote__btn {
@@ -74,6 +77,10 @@ body {
   height: 30px;
   margin-top: 10px;
   font-size: 16px;
+}
+
+.card .card__tab::-webkit-scrollbar {
+  display: none;
 }
 
 .card .tab-button.active {
@@ -85,10 +92,12 @@ body {
   border-radius: 3px;
   margin-bottom: 3px;
   position: relative;
+  min-height: 40px;
 }
 
 .card .notelist__post .post__text {
   font-style: italic;
+  overflow-wrap: break-word;
 }
 
 .card .notelist__post .post__btn_open {
@@ -105,4 +114,11 @@ body {
   right: 2px;
   width: 35px;
   height: 35px;
+}
+
+.card .notelist__post .post_header {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 200px;
 }

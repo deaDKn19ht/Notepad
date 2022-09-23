@@ -44,15 +44,20 @@ app.component('tab-addnote', {
             return new Date(Date.now()).toLocaleString()
         }
     },
-    template: `<div class="card__tab"><input type="text" class="addnote__input" v-model="post.header">
+    template: `<div class="card__tab">
+    <input type="text" class="addnote__input" v-model.trim="post.header">
     <textarea class="addnote__textarea" v-model="post.note"></textarea>
     <button class="addnote__btn" @click="saveNote">Сохранить</button></div>`
 })
 
 app.component('tab-notelist', {
-    props: ['posts'],    
-    template: `<div class="card__tab"><ul v-for="(post, id) in posts"><li class="notelist__post"><h3>{{post.header}}</h3><p>{{post.date}}</p>
-    <button class="post__btn_open" @click="post.active = !post.active">&#9660;</button><button class="post__btn_remove" @click="posts.splice(id,1)">&#10006;</button>
+    props: ['posts'],
+    template: `<div class="card__tab">
+    <h3 v-show="posts.length<1">Нет записей</h3>
+    <ul v-for="(post, id) in posts"><li class="notelist__post">
+    <h3 class="post_header" v-if="post.header.length>0">{{post.header}}</h3><h3 v-else><br></h3><p>{{post.date}}</p>
+    <button class="post__btn_open" @click="post.active = !post.active">&#9660;</button>
+    <button class="post__btn_remove" @click="posts.splice(id,1)">&#10006;</button>
     <p class="post__text" v-show="post.active"><hr>{{post.note}}</p></li></ul></div>`
 })
 
