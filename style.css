@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 
 body {
@@ -77,4 +78,31 @@ body {
 
 .card .tab-button.active {
   background-color: oldlace;
+}
+
+.card .notelist__post {
+  border: 1px solid #b7ac98;
+  border-radius: 3px;
+  margin-bottom: 3px;
+  position: relative;
+}
+
+.card .notelist__post .post__text {
+  font-style: italic;
+}
+
+.card .notelist__post .post__btn_open {
+  position: absolute;
+  top: 2px;
+  right: 39px;
+  width: 35px;
+  height: 35px;
+}
+
+.card .notelist__post .post__btn_remove {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 35px;
+  height: 35px;
 }

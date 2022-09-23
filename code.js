@@ -50,10 +50,10 @@ app.component('tab-addnote', {
 })
 
 app.component('tab-notelist', {
-    props: ['posts'],
-    template: `<div class="card__tab" v-for="(post, it) in posts"><h3>{{post.header}}</h3><p>{{post.date}}</p>
-    <button @click="post.active = !post.active">&#9660;</button><button @click="posts.splice(id,1)">&#10006;</button>
-    <p v-show="post.active">{{post.note}}</p></div>`
+    props: ['posts'],    
+    template: `<div class="card__tab"><ul v-for="(post, id) in posts"><li class="notelist__post"><h3>{{post.header}}</h3><p>{{post.date}}</p>
+    <button class="post__btn_open" @click="post.active = !post.active">&#9660;</button><button class="post__btn_remove" @click="posts.splice(id,1)">&#10006;</button>
+    <p class="post__text" v-show="post.active"><hr>{{post.note}}</p></li></ul></div>`
 })
 
 app.mount('#app')
